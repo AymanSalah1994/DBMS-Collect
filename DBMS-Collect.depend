@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672082612 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672085259 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -67,4 +67,9 @@
 
 1671820688 source:c:\users\ayman\desktop\dbms-collect\src\updatingquery.cpp
 	"UpdatingQuery.h"
+
+1672086607 source:c:\users\ayman\desktop\dbms-collect\src\selectclass.cpp
+	"SelectClass.h"
+
+1672086617 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
 

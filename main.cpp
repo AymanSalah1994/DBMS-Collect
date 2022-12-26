@@ -5,6 +5,7 @@
 #include<CreateQuery.h>
 #include<InsertQuery.h>
 #include<UpdatingQuery.h>
+#include<SelectClass.h>
 using namespace std;
 
 int main()
@@ -118,6 +119,8 @@ int main()
 
 
 
+
+
             else
             {
                 cout<<"Later , But Something Wrong Happened Or Not Handled Yet !"<<endl ;
@@ -128,18 +131,6 @@ int main()
     }// End If logged in = 1
 
 
-
-
-
-
-
-
-
-    /*
-    string myQuery  = "update QWE set id=000 Where name=sdfgtr" ;
-    UpdatingQuery UQ(myQuery ,"DB1") ;
-    UQ.evaluateTheUpdate() ;
-    */
 
     return 0;
 }
