@@ -11,13 +11,14 @@ using namespace std;
 class HelperStaticClass
 {
 public:
-    static vector<string> vectorFromString(string userInput) // A Function Takes String and Return a Vector
+    static vector<string> vectorFromString(string userInput)
     {
+        // A Function Takes String and Return a Vector
         string temporaryWord ;
         stringstream streamFromLine(userInput);
         vector<string> words;
-
         while(getline(streamFromLine, temporaryWord, ' '))
+            // The Separator is ALWAYS a Space
         {
             words.push_back(temporaryWord);
         }
@@ -26,31 +27,20 @@ public:
 
     static string queryToUpper(string userInput)
     {
-
+        // Takes any String "create" and Makes it Capital "CREATE"
         for(int i = 0; i < userInput.size(); i++)
         {
+            // Looping Character By Character
             userInput.at(i) = toupper(userInput.at(i));
         }
         return userInput ;
     }
 
 
-    static vector<string> vectorFromStringEqual(string userInput) // A Function Takes String and Return a Vector
-    {
-        string temporaryWord ;
-        stringstream streamFromLine(userInput);
-        vector<string> words;
-
-        while(getline(streamFromLine, temporaryWord, '=' ))
-        {
-            words.push_back(temporaryWord);
-        }
-        return words ;
-    }
-
 
     static void removeSpaces(string &str)
     {
+        // A Function to Take a String and Remove ALL redundant spaces
         // n is length of the original string
         int n = str.length();
         // i points to next position to be filled in
@@ -107,6 +97,8 @@ public:
 
     static string equalReplacer(string mainString, string replacedOne, string replacerOne )
     {
+        // A Function Takes a String and The Two Symbols , One That is Currently In String
+        // And the Other That We Want to replace with the Old One
         size_t pos;
         while ((pos = mainString.find(replacedOne)) != string::npos)
         {
@@ -118,6 +110,7 @@ public:
 
     static string stringFromVector(vector<string> vectorToString)
     {
+        // A Function Takes a Vector and Return a string
         string finalString = "" ;
         int i =  0 ;
         for (i  ; i < vectorToString.size() ; i++)
@@ -133,6 +126,7 @@ public:
 
     static void updateFileData(const char *fileName,int conditionIndex, string conditionValue, int updateIndex, string updateValue )
     //FileName  , conditionIndex , conditionValue , updatedIndex , UpdatedValue
+    //Update a File , Given A New Value and Its Index and the Condition Value and Its Index
     {
         ifstream oldFile; // Open the File First and Get all Of the Data in a Variable
         oldFile.open(fileName); //open the input file
@@ -159,13 +153,13 @@ public:
                 newFileObject<<oldLineStringAgain<<"\n" ;
             }
         }
-
         newFileObject.close() ;
     }
 
 
     static int dbExists(string dbName)
     {
+        // A Function that Checks if a DB Exists and Saved !
         int result =  0  ;
         ifstream DbFile;
         DbFile.open("Databases.txt");
@@ -180,8 +174,6 @@ public:
                 result = 1 ;
         }
         return result ;
-
-
     }
 
 };
