@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1671998527 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+	<iostream>
+	<conio.h>
+	<HelperStaticClass.h>
+	<User.h>
+	<CreateQuery.h>
+	<InsertQuery.h>
+	<UpdatingQuery.h>
+
+1671868540 c:\users\ayman\desktop\dbms-collect\include\user.h
+	<iostream>
+	<string.h>
+	<stdio.h>
+	<fstream>
+	<sstream>
+	<cstdlib>
+
+1671815293 source:c:\users\ayman\desktop\dbms-collect\src\user.cpp
+	"User.h"
+
+1671819382 source:c:\users\ayman\desktop\dbms-collect\src\createquery.cpp
+	"CreateQuery.h"
+
+1671870854 c:\users\ayman\desktop\dbms-collect\include\createquery.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<HelperStaticClass.h>
+
+1671819281 source:c:\users\ayman\desktop\dbms-collect\src\helperstaticclass.cpp
+	"HelperStaticClass.h"
+
+1671869051 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<string>
+
+1671819864 source:c:\users\ayman\desktop\dbms-collect\src\insertquery.cpp
+	"InsertQuery.h"
+
+1671871238 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<HelperStaticClass.h>
+
+1672003781 c:\users\ayman\desktop\dbms-collect\include\updatingquery.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<HelperStaticClass.h>
+
+1671820688 source:c:\users\ayman\desktop\dbms-collect\src\updatingquery.cpp
+	"UpdatingQuery.h"
+
