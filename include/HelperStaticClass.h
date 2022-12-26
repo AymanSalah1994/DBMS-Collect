@@ -2,6 +2,7 @@
 #define HELPERSTATICCLASS_H
 #include <iostream>
 #include<vector>
+#include<algorithm>
 #include<sstream>
 #include <fstream>
 #include <cstdlib>

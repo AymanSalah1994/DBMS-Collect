@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1671998527 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672080152 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -22,7 +22,7 @@
 1671819382 source:c:\users\ayman\desktop\dbms-collect\src\createquery.cpp
 	"CreateQuery.h"
 
-1671870854 c:\users\ayman\desktop\dbms-collect\include\createquery.h
+1672080380 c:\users\ayman\desktop\dbms-collect\include\createquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -34,9 +34,10 @@
 1671819281 source:c:\users\ayman\desktop\dbms-collect\src\helperstaticclass.cpp
 	"HelperStaticClass.h"
 
-1671869051 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
+1672079046 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
 	<iostream>
 	<vector>
+	<algorithm>
 	<sstream>
 	<fstream>
 	<cstdlib>

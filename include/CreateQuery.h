@@ -30,41 +30,44 @@ public :
 
 
 
-    int dbAlreadExists ()
-    {
-        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && HelperStaticClass::dbExists(databaseName) == 1)
-        {
-            return 1  ;
-        }
-        else
-            return 0  ;
-    }
+
 
     int queryIsShort()
     {
         if (theQueryVector.size() < 3 )
-        {
             return 1  ;
-        }
         else
             return 0  ;
+    }
+
+    int dbAlreadExists ()
+    {
+        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && HelperStaticClass::dbExists(databaseName) == 1)
+        {
+            return 1 ;
+        }
+        else
+            return 0 ;
     }
 
 
     void evaluateTheCreation()
     {
 
-        if (dbAlreadExists())
+        if (queryIsShort() == 1)
+            // Should Be the First thing to Check
         {
-            count<<"Database Already Exists ! " <<endl ;
+            cout<<"Query is Too Short to Handle !"<<endl ;
             return ; // This Will END the Evaluation
         }
 
-        if (queryIsShort())
+        if (dbAlreadExists() == 1 )
         {
-            count<<"Query is Too Short to Handle !"<<endl ;
+            cout<<"Database Already Exists ! " <<endl ;
             return ; // This Will END the Evaluation
         }
+
+
 
 
         if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && dbAlreadExists() != 1)
@@ -76,19 +79,18 @@ public :
             databaseName = theQueryVector.at(2)  ;
             cout<<"The Database "<<theQueryVector.at(2) ;
             cout<<" Created Successfully"<<endl ;
+            return ;
         }
 
 
 
-
-
-        else if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("table"))
+        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("table"))
         {
             if (databaseName == "")
-                {
-                    cout<<"Please Specify a DB Name First"<<endl ;
+            {
+                cout<<"Please Specify a DB Name First"<<endl ;
                 return ;
-                }
+            }
             else
             {
                 vector<string>types  ;
@@ -97,37 +99,47 @@ public :
                 string tableFileName = databaseName2.append("-").append(theQueryVector.at(2)).append(".txt") ;
                 const char *c = tableFileName.c_str();
                 //Those For Hoisting the Table
-                int i  = 0  ;
-                for (i ; i<theQueryVector.size(); i++)
+                try
                 {
-                    if (HelperStaticClass::queryToUpper(theQueryVector.at(i)) == HelperStaticClass::queryToUpper("int") || HelperStaticClass::queryToUpper(theQueryVector.at(i)) == HelperStaticClass::queryToUpper("varchar") )
+                    int i  = 0  ;
+                    for (i ; i<theQueryVector.size(); i++)
                     {
-                        cout<<"Type"<<theQueryVector.at(i)<<endl ;
-                        types.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(i))) ;
+                        if (HelperStaticClass::queryToUpper(theQueryVector.at(i)) == HelperStaticClass::queryToUpper("int") || HelperStaticClass::queryToUpper(theQueryVector.at(i)) == HelperStaticClass::queryToUpper("varchar") )
+                        {
+                            cout<<"Type"<<theQueryVector.at(i)<<endl ;
+                            types.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(i))) ;
+                        }
+                        else if (theQueryVector.at(i) != "," && theQueryVector.at(i) != ";" && i>2 && !isdigit(theQueryVector.at(i)[0])  )
+                        {
+                            cout<<"Column"<<theQueryVector.at(i)<<endl ;
+                            columnsNames.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(i))) ;
+                        }
                     }
-                    else if (theQueryVector.at(i) != "," && theQueryVector.at(i) != ";" && i>2 && !isdigit(theQueryVector.at(i)[0])  )
-                    {
-                        cout<<"Column"<<theQueryVector.at(i)<<endl ;
-                        columnsNames.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(i))) ;
-                    }
-                }
 
-                if (columnsNames.size() == types.size())
-                {
-                    fstream newFileObject  ;
-                    newFileObject.open(c, ios::out) ;
-                    int j  =  0  ;
-                    for (j ; j < columnsNames.size(); j++)
+                    if (columnsNames.size() == types.size())
                     {
-                        newFileObject<<columnsNames.at(j)<<" " ;
+                        fstream newFileObject  ;
+                        newFileObject.open(c, ios::out) ;
+                        int j  =  0  ;
+                        for (j ; j < columnsNames.size(); j++)
+                        {
+                            newFileObject<<columnsNames.at(j)<<" " ;
+                        }
+                        newFileObject<<"\n" ;
+                        newFileObject.close() ;
+                        cout<<"The Table "<<theQueryVector.at(2) ;
+                        cout<<" Created Successfully"<<endl ;
                     }
-                    newFileObject<<"\n" ;
-                    newFileObject.close() ;
-                    cout<<"The Table "<<theQueryVector.at(2) ;
-                    cout<<" Created Successfully"<<endl ;
+                    else
+                    {
+                        cout<<"No matching size"<<endl ;
+                    }
+                    throw 777 ;
                 }
-                else
-                    cout<<"No matching size"<<endl ;
+                catch(int numError)
+                {
+                    cout<<"Err Code 777" <<endl ;
+                }
             }
         }
 
