@@ -36,7 +36,16 @@ public:
         return userInput ;
     }
 
-
+    static void removeDigits(string &myString)
+    {
+        char numberLiterals[] =  {'0','1','2','3','4','5','6','7','8','9'} ;
+        int i =  0 ;
+        for (i ;  i < sizeof(numberLiterals) ; i++)
+        {
+            myString.erase(remove(myString.begin(), myString.end(), numberLiterals[i]), myString.end());
+            //remove A from string
+        }
+    }
 
     static void removeSpaces(string &str)
     {

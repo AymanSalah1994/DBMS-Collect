@@ -20,15 +20,54 @@ public :
         databaseName  = _dbName ;
         theQuery = _theQuery ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, ",", " ") ;
+        theQuery = HelperStaticClass::equalReplacer(theQuery, ";", " ") ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, "(", " ") ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, ")", " ") ;
-        HelperStaticClass::removeSpaces(theQuery) ;
+        HelperStaticClass::removeSpaces(theQuery) ; // Change is In Place , Using Reference
+        HelperStaticClass::removeDigits(theQuery);
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 
+
+
+    int dbAlreadExists ()
+    {
+        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && HelperStaticClass::dbExists(databaseName) == 1)
+        {
+            return 1  ;
+        }
+        else
+            return 0  ;
+    }
+
+    int queryIsShort()
+    {
+        if (theQueryVector.size() < 3 )
+        {
+            return 1  ;
+        }
+        else
+            return 0  ;
+    }
+
+
     void evaluateTheCreation()
     {
-        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && HelperStaticClass::dbExists(databaseName) != 1)
+
+        if (dbAlreadExists())
+        {
+            count<<"Database Already Exists ! " <<endl ;
+            return ; // This Will END the Evaluation
+        }
+
+        if (queryIsShort())
+        {
+            count<<"Query is Too Short to Handle !"<<endl ;
+            return ; // This Will END the Evaluation
+        }
+
+
+        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && dbAlreadExists() != 1)
         {
             fstream newFileObject  ;
             newFileObject.open("Databases.txt", ios::app) ;
@@ -38,11 +77,9 @@ public :
             cout<<"The Database "<<theQueryVector.at(2) ;
             cout<<" Created Successfully"<<endl ;
         }
-        else if (HelperStaticClass::dbExists(databaseName) == 1 && HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") )
-        {
-            cout<<"Database Already Exists !"<<endl ;
-            return ;
-        }
+
+
+
 
 
         else if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("table"))
