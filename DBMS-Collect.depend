@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672085259 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672086650 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -7,6 +7,7 @@
 	<CreateQuery.h>
 	<InsertQuery.h>
 	<UpdatingQuery.h>
+	<SelectClass.h>
 
 1671868540 c:\users\ayman\desktop\dbms-collect\include\user.h
 	<iostream>
@@ -71,5 +72,13 @@
 1672086607 source:c:\users\ayman\desktop\dbms-collect\src\selectclass.cpp
 	"SelectClass.h"
 
-1672086617 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
+1672087911 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<string>
+	<HelperStaticClass.h>
 
