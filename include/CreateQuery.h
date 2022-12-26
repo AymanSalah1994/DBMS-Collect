@@ -24,7 +24,10 @@ public :
         theQuery = HelperStaticClass::equalReplacer(theQuery, "(", " ") ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, ")", " ") ;
         HelperStaticClass::removeSpaces(theQuery) ; // Change is In Place , Using Reference
-        HelperStaticClass::removeDigits(theQuery);
+        if (databaseName != "")
+        {
+            HelperStaticClass::removeDigits(theQuery);
+        }
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 
@@ -133,8 +136,9 @@ public :
                     else
                     {
                         cout<<"No matching size"<<endl ;
+                        throw 777 ;
                     }
-                    throw 777 ;
+
                 }
                 catch(int numError)
                 {

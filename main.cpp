@@ -68,7 +68,7 @@ int main()
             }
 
             string userCommandAsString(u.userCommand) ;
-            userCommandAsString.append(";") ;
+            userCommandAsString.append("; ;") ;
             vector<string> userCommandAsVector   ;
             userCommandAsVector = HelperStaticClass::vectorFromString(userCommandAsString) ;
 
@@ -93,12 +93,9 @@ int main()
 
             else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "CREATE" )
             {
-                cout<<"Create Query"<<endl ;
-                cout<<userCommandAsString ;
                 CreateQuery CQ(userCommandAsString, u.DBName);
                 CQ.evaluateTheCreation() ;
                 u.DBName = CQ.databaseName ;
-
                 _getch() ;
             }
 
