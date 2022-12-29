@@ -31,7 +31,9 @@ int main()
                 cin>>passEnter ;
                 cout<<endl ;
                 u.logInUser(nameEnter, passEnter) ;
-                strcpy(u.userCommand, "" );
+                 strcpy(u.userCommand, "*");
+                _getch() ;
+                cin.ignore();
                 continue ;
             }
             else if (strcmp(u.userCommand,"new()") == 0 )
@@ -49,7 +51,7 @@ int main()
             else
             {
                 cout<<"\n" ;
-                cout<<"Invalid Command , Please Write One Of Available Commands !"<<endl ;
+                cout<<"Invalid Command , Press ENTER and Write One Of Available Commands !"<<endl ;
                 strcpy(u.userCommand, "*");
                 _getch() ;
                 cin.ignore();
