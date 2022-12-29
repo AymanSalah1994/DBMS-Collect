@@ -31,8 +31,7 @@ int main()
                 cin>>passEnter ;
                 cout<<endl ;
                 u.logInUser(nameEnter, passEnter) ;
-                 strcpy(u.userCommand, "*");
-
+                strcpy(u.userCommand, "*");
                 cin.ignore();
                 continue ;
             }
@@ -86,7 +85,6 @@ int main()
             vector<string> userCommandAsVector   ;
             userCommandAsVector = HelperStaticClass::vectorFromString(userCommandAsString) ;
 
-
             if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "USE")
             {
                 if (HelperStaticClass::dbExists(userCommandAsVector.at(1)) == 1 )
@@ -120,7 +118,6 @@ int main()
                 IQ.evaluateTheInsertion() ;
                 _getch() ;
             }
-
 
 
             else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "UPDATE" )
@@ -157,10 +154,8 @@ int main()
                 cout<<"Invalid Command ! Write a SQL Query Or exit() to Quit Or Manual To Show Manual"<<endl ;
                 _getch() ;
             }
-
         }
     }// End If logged in = 1
-
 
 
     return 0;
