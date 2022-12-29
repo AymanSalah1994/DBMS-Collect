@@ -145,7 +145,6 @@ public:
         strStream << oldFile.rdbuf(); //read the file
         oldFile.close();
 
-
         fstream newFileObject  ; // OPen the Same File again and Write with New Data
         newFileObject.open(fileName,ios::out) ; // Here we Just Open it to Read Not Append
         while(getline(strStream, oldLineFromStream, '\n'))

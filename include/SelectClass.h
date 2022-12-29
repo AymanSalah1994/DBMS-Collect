@@ -29,9 +29,6 @@ public:
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 
-
-
-
     int queryIsShort()
     // A Select Query is at Least 4
     {
@@ -40,7 +37,6 @@ public:
         else
             return 0  ;
     }
-
 
     int hasFromClause()
     {
@@ -57,7 +53,6 @@ public:
         return hasFrom ;
     }
 
-
     int fromIndex()
     {
         int fromIndex = 0 ;
@@ -72,7 +67,6 @@ public:
         }
         return fromIndex ;
     }
-
 
     void fillAllTableColumnNames()
     {
@@ -127,8 +121,6 @@ public:
         return result ;
     }
 
-
-
     void fillTheIndexes()
     {
         int i = 0  ;
@@ -144,8 +136,6 @@ public:
             }
         }
     }
-
-
 
 
     int tableExits()
@@ -179,8 +169,6 @@ public:
         }
     }
 
-
-
     void evaluateTheSelection()
     {
         if (databaseName == "")
@@ -196,7 +184,7 @@ public:
 
         if (hasFromClause() == 0 )
         {
-         cout<<"Error ! Need From Clause " <<endl ;
+            cout<<"Error ! Need From Clause " <<endl ;
             return ;
         }
 
@@ -216,29 +204,28 @@ public:
 
         fillTheIndexes() ;
 
+        int fromIndeX = fromIndex() ;
+        string tablePostFix = theQueryVector.at(fromIndeX + 1) ;
+        string tableFileName  = databaseName+"-"+tablePostFix+".txt" ;
+        const char *c = tableFileName.c_str();
+        fstream checkedFile ;
+        checkedFile.open(c) ;
 
-            int fromIndeX = fromIndex() ;
-            string tablePostFix = theQueryVector.at(fromIndeX + 1) ;
-            string tableFileName  = databaseName+"-"+tablePostFix+".txt" ;
-            const char *c = tableFileName.c_str();
-            fstream checkedFile ;
-            checkedFile.open(c) ;
-
-    while(!checkedFile.eof())
+        while(!checkedFile.eof())
         {
             string lineInFile  = "" ;
             getline(checkedFile, lineInFile) ;
             vector<string>CurrentLineInTable = HelperStaticClass::vectorFromString(lineInFile) ;
             int i =  0 ;
-           if (CurrentLineInTable.size() >= 1)
-           {
-            for (i ; i < theQueryIndexesVector.size(); i++)
+            if (CurrentLineInTable.size() >= 1)
             {
-                int ind = theQueryIndexesVector.at(i) ;
-                cout<<CurrentLineInTable.at(ind)<<"\t" ;
+                for (i ; i < theQueryIndexesVector.size(); i++)
+                {
+                    int ind = theQueryIndexesVector.at(i) ;
+                    cout<<CurrentLineInTable.at(ind)<<"\t" ;
+                }
+                cout<<"\n" ;
             }
-            cout<<"\n" ;
-           }
 
             if(checkedFile.eof())
             {

@@ -43,7 +43,6 @@ public :
             return 0  ;
     }
 
-
     int tableExists()
     {
         int result  =  0 ;

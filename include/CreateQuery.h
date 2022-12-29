@@ -31,10 +31,6 @@ public :
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 
-
-
-
-
     int queryIsShort()
     {
         if (theQueryVector.size() < 3 )
@@ -52,7 +48,6 @@ public :
         else
             return 0 ;
     }
-
 
     void evaluateTheCreation()
     {
@@ -148,13 +143,6 @@ public :
         }
 
     }
-
-
 };
-
-
-
-
-
 
 #endif // CREATEQUERY_H
