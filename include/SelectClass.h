@@ -98,10 +98,12 @@ public:
         else
         {
             int index = 1  ;
-            while (HelperStaticClass::queryToUpper(theQueryVector.at(index) )!= "FROM" )
+            while (true)
             {
+                if (HelperStaticClass::queryToUpper(theQueryVector.at(index)) == "FROM" )
+                    break ;
                 queryColumnNames.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(index))) ;
-                index += 1  ;
+                index += 1 ;
             }
         }
     }
@@ -227,21 +229,21 @@ public:
             string lineInFile  = "" ;
             getline(checkedFile, lineInFile) ;
             vector<string>CurrentLineInTable = HelperStaticClass::vectorFromString(lineInFile) ;
-            int i =  0  ;
-            if (lineInFile == "\n")
-            {
-                checkedFile.close() ;
-                break ;
-            }
+            int i =  0 ;
+           if (CurrentLineInTable.size() >= 1)
+           {
             for (i ; i < theQueryIndexesVector.size(); i++)
             {
-                cout<<CurrentLineInTable.at(i)<<"\t" ;
+                int ind = theQueryIndexesVector.at(i) ;
+                cout<<CurrentLineInTable.at(ind)<<"\t" ;
             }
             cout<<"\n" ;
+           }
 
             if(checkedFile.eof())
             {
                 checkedFile.close() ;
+                break ;
             }
         }
 
