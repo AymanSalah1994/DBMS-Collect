@@ -128,6 +128,12 @@ int main()
             }
 
 
+            else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "DELETE" )
+            {
+                DeleteClass DC(userCommandAsString, u.DBName) ;
+                DC.evaluateDlete() ;
+                _getch() ;
+            }
 
 
             else

@@ -73,7 +73,7 @@
 1672086607 source:c:\users\ayman\desktop\dbms-collect\src\selectclass.cpp
 	"SelectClass.h"
 
-1672323010 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
+1672323105 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -86,5 +86,13 @@
 1672138291 source:c:\users\ayman\desktop\dbms-collect\src\deleteclass.cpp
 	"DeleteClass.h"
 
-1672138286 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+1672327204 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<cstdio>
+	<HelperStaticClass.h>
 
