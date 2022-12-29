@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672318132 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672328323 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -49,7 +49,7 @@
 1671819864 source:c:\users\ayman\desktop\dbms-collect\src\insertquery.cpp
 	"InsertQuery.h"
 
-1672085098 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
+1672328046 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -58,7 +58,7 @@
 	<cctype>
 	<HelperStaticClass.h>
 
-1672003781 c:\users\ayman\desktop\dbms-collect\include\updatingquery.h
+1672328072 c:\users\ayman\desktop\dbms-collect\include\updatingquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -86,7 +86,7 @@
 1672138291 source:c:\users\ayman\desktop\dbms-collect\src\deleteclass.cpp
 	"DeleteClass.h"
 
-1672327204 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+1672327658 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
 	<iostream>
 	<vector>
 	<sstream>

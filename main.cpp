@@ -46,6 +46,15 @@ int main()
                 strcpy(u.userCommand, "" );
                 break ;
             }
+            else
+            {
+                cout<<"\n" ;
+                cout<<"Invalid Command , Please Write One Of Available Commands !"<<endl ;
+                strcpy(u.userCommand, "*");
+                _getch() ;
+                cin.ignore();
+                continue ;
+            }
 
         }
         if (u.loggedIn == 1 )
@@ -131,7 +140,7 @@ int main()
             else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "DELETE" )
             {
                 DeleteClass DC(userCommandAsString, u.DBName) ;
-                DC.evaluateDlete() ;
+                DC.evaluateDelete() ;
                 _getch() ;
             }
 

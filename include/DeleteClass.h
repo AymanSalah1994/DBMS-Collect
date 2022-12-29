@@ -24,7 +24,7 @@ public :
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 
-    void evaluateDlete()
+    void evaluateDelete()
     {
         string tableFileName = databaseName+"-"+theQueryVector.at(2)+".txt" ;
         const char *table = tableFileName.c_str();
