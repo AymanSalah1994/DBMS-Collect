@@ -249,10 +249,6 @@ public:
 
     }
 
-
-
-
-
 };
 
 #endif // SELECTCLASS_H
