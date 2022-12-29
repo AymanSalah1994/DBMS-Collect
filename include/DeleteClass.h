@@ -33,8 +33,6 @@ public :
         if (checkedFile)
         {
             cout<<"File is There "<<endl  ;
-
-
             if(theQueryVector.size() == 3)
             {
                 checkedFile.close() ;
