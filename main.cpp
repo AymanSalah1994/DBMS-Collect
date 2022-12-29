@@ -32,7 +32,7 @@ int main()
                 cout<<endl ;
                 u.logInUser(nameEnter, passEnter) ;
                  strcpy(u.userCommand, "*");
-                _getch() ;
+
                 cin.ignore();
                 continue ;
             }
@@ -147,9 +147,14 @@ int main()
             }
 
 
+            else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "EXIT()" )
+            {
+                break ;
+            }
+
             else
             {
-                cout<<"Later , But Something Wrong Happened Or Not Handled Yet !"<<endl ;
+                cout<<"Invalid Command ! Write a SQL Query Or exit() to Quit Or Manual To Show Manual"<<endl ;
                 _getch() ;
             }
 
