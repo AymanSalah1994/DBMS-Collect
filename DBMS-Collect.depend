@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672328392 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672329825 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -24,7 +24,7 @@
 1671819382 source:c:\users\ayman\desktop\dbms-collect\src\createquery.cpp
 	"CreateQuery.h"
 
-1672082556 c:\users\ayman\desktop\dbms-collect\include\createquery.h
+1672329139 c:\users\ayman\desktop\dbms-collect\include\createquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -36,7 +36,7 @@
 1671819281 source:c:\users\ayman\desktop\dbms-collect\src\helperstaticclass.cpp
 	"HelperStaticClass.h"
 
-1672079046 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
+1672329169 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
 	<iostream>
 	<vector>
 	<algorithm>
@@ -49,7 +49,7 @@
 1671819864 source:c:\users\ayman\desktop\dbms-collect\src\insertquery.cpp
 	"InsertQuery.h"
 
-1672328046 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
+1672329212 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -73,7 +73,7 @@
 1672086607 source:c:\users\ayman\desktop\dbms-collect\src\selectclass.cpp
 	"SelectClass.h"
 
-1672323105 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
+1672330259 c:\users\ayman\desktop\dbms-collect\include\selectclass.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -86,7 +86,7 @@
 1672138291 source:c:\users\ayman\desktop\dbms-collect\src\deleteclass.cpp
 	"DeleteClass.h"
 
-1672327658 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+1672329583 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
 	<iostream>
 	<vector>
 	<sstream>

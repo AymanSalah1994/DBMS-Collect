@@ -83,6 +83,7 @@ int main()
             string userCommandAsString(u.userCommand) ;
             userCommandAsString.append(" ;") ;
             vector<string> userCommandAsVector   ;
+
             userCommandAsVector = HelperStaticClass::vectorFromString(userCommandAsString) ;
 
             if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "USE")

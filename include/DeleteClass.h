@@ -21,6 +21,8 @@ public :
     {
         databaseName  = _dbName ;
         theQuery = _theQuery ;
+        theQuery = HelperStaticClass::equalReplacer(theQuery, ";", " ") ;
+        HelperStaticClass::removeSpaces(theQuery) ;
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
 

@@ -153,11 +153,13 @@ public:
             if (checkedFile)
             {
                 // In Case It opened Then It Exists
+                cout<<tableFileName<<endl ;
                 checkedFile.close() ;
                 result = 1  ;
             }
             else
             {
+                cout<<tableFileName<<endl ;
                 checkedFile.close() ;
                 result =  0 ;
             }
