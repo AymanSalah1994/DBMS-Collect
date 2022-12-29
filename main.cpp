@@ -6,6 +6,7 @@
 #include<InsertQuery.h>
 #include<UpdatingQuery.h>
 #include<SelectClass.h>
+#include<DeleteClass.h>
 using namespace std;
 
 int main()
@@ -37,6 +38,7 @@ int main()
             {
                 strcpy(u.userCommand, "" );
                 u.promptAccountCreation();
+                u.insertUserData() ;
 
             }
             else if (strcmp(u.userCommand,"q()") == 0   || strcmp(u.userCommand,"quit()") == 0 )
@@ -69,7 +71,7 @@ int main()
             }
 
             string userCommandAsString(u.userCommand) ;
-            userCommandAsString.append("; ;") ;
+            userCommandAsString.append(" ;") ;
             vector<string> userCommandAsVector   ;
             userCommandAsVector = HelperStaticClass::vectorFromString(userCommandAsString) ;
 
@@ -118,7 +120,12 @@ int main()
             }
 
 
-
+            else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "SELECT" )
+            {
+                SelectClass SQ(userCommandAsString, u.DBName);
+                SQ.evaluateTheSelection() ;
+                _getch() ;
+            }
 
 
             else

@@ -15,16 +15,20 @@ private:
     string databaseName  ;
     vector<string> theQueryVector ;
     string theQuery  ;
+    vector<string>allTableColumns ;
+    vector<string>queryColumnNames  ;
+    vector<int>theQueryIndexesVector ;
 public:
     SelectClass(string _theQuery,string _dataBaseName ="")
     {
-        _dataBaseName = databaseName   ;
+        databaseName = _dataBaseName ;
         theQuery = _theQuery ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, ",", " ") ;
         theQuery = HelperStaticClass::equalReplacer(theQuery, ";", " ") ;
         HelperStaticClass::removeSpaces(theQuery) ;
         theQueryVector = HelperStaticClass::vectorFromString(theQuery) ;
     }
+
 
 
 
@@ -58,7 +62,7 @@ public:
     {
         int fromIndex = 0 ;
         int i =  0;
-         for (i ; theQueryVector.size() ; i++)
+        for (i ; theQueryVector.size() ; i++)
         {
             if (HelperStaticClass::queryToUpper(theQueryVector.at(i)) == "FROM")
             {
@@ -68,6 +72,77 @@ public:
         }
         return fromIndex ;
     }
+
+
+    void fillAllTableColumnNames()
+    {
+        int fromIndexNumber = fromIndex() ;
+        string tableFileName  = databaseName+"-"+theQueryVector.at(fromIndexNumber + 1)+".txt" ;
+        const char *c = tableFileName.c_str();
+        ifstream checkedFile  ;
+        checkedFile.open(c) ;
+        string firstLineOfTable  ;
+        getline(checkedFile, firstLineOfTable) ;
+        allTableColumns =HelperStaticClass::vectorFromString(firstLineOfTable) ;
+        checkedFile.close() ;
+    }
+
+    void fillQueryColumnNames()
+    {
+        if (theQueryVector.at(1) == "*")
+        {
+            queryColumnNames = allTableColumns ;
+            // Should it Be Loop ?
+            // TODO
+        }
+        else
+        {
+            int index = 1  ;
+            while (HelperStaticClass::queryToUpper(theQueryVector.at(index) )!= "FROM" )
+            {
+                queryColumnNames.push_back(HelperStaticClass::queryToUpper(theQueryVector.at(index))) ;
+                index += 1  ;
+            }
+        }
+    }
+
+    int invalidColumnsInQuery()
+    {
+        int result  = 0  ;
+        int i = 0  ;
+        for (i ; i < queryColumnNames.size() ; i++)
+        {
+            if (std::find(allTableColumns.begin(), allTableColumns.end(),queryColumnNames.at(i))!=allTableColumns.end())
+            {
+                // Nothing to Do , Keep Going
+            }
+            else
+            {
+                result = 1  ;
+                break ;
+            }
+        }
+        return result ;
+    }
+
+
+
+    void fillTheIndexes()
+    {
+        int i = 0  ;
+        for (i ; i < queryColumnNames.size() ; i++)
+        {
+            int j = 0  ;
+            for (j ; j < allTableColumns.size() ; j++)
+            {
+                if (HelperStaticClass::queryToUpper(queryColumnNames.at(i)) == HelperStaticClass::queryToUpper(allTableColumns.at(j)))
+                {
+                    theQueryIndexesVector.push_back(j) ;
+                }
+            }
+        }
+    }
+
 
 
 
@@ -85,13 +160,14 @@ public:
             checkedFile.open(c) ;
             if (checkedFile)
             {
+                // In Case It opened Then It Exists
                 checkedFile.close() ;
                 result = 1  ;
             }
             else
             {
                 checkedFile.close() ;
-                return 0 ;
+                result =  0 ;
             }
             return result ;
         }
@@ -99,6 +175,76 @@ public:
         {
             cout<<"Error From Table Naming"<<endl ;
         }
+    }
+
+
+
+    void evaluateTheSelection()
+    {
+        if (databaseName == "")
+        {
+            cout<<"Error ! Specify Database Name First , try USE KeyWord" <<endl ;
+            return ;
+        }
+        if (queryIsShort() == 1 )
+        {
+            cout<<"Error ! Query is Short Or Wrong Syntax " <<endl ;
+            return ;
+        }
+
+        if (hasFromClause() == 0 )
+        {
+         cout<<"Error ! Need From Clause " <<endl ;
+            return ;
+        }
+
+        if (tableExits() == 0 )
+        {
+            cout<<"Error , No Table With This Name" <<endl ;
+            return ;
+        }
+
+        fillAllTableColumnNames() ;
+        fillQueryColumnNames() ;
+        if (invalidColumnsInQuery() == 1)
+        {
+            cout<<"Error ! Query Does NOT match Column Names in Table " <<endl ;
+            return ;
+        }
+
+        fillTheIndexes() ;
+
+
+            int fromIndeX = fromIndex() ;
+            string tablePostFix = theQueryVector.at(fromIndeX + 1) ;
+            string tableFileName  = databaseName+"-"+tablePostFix+".txt" ;
+            const char *c = tableFileName.c_str();
+            fstream checkedFile ;
+            checkedFile.open(c) ;
+
+    while(!checkedFile.eof())
+        {
+            string lineInFile  = "" ;
+            getline(checkedFile, lineInFile) ;
+            vector<string>CurrentLineInTable = HelperStaticClass::vectorFromString(lineInFile) ;
+            int i =  0  ;
+            if (lineInFile == "\n")
+            {
+                checkedFile.close() ;
+                break ;
+            }
+            for (i ; i < theQueryIndexesVector.size(); i++)
+            {
+                cout<<CurrentLineInTable.at(i)<<"\t" ;
+            }
+            cout<<"\n" ;
+
+            if(checkedFile.eof())
+            {
+                checkedFile.close() ;
+            }
+        }
+
     }
 
 
