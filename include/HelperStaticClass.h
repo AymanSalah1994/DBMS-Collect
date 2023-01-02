@@ -50,10 +50,9 @@ public:
 
     static void removeSpaces(string &str)
     {
-        // A Function to Take a String and Remove ALL redundant spaces
-        // n is length of the original string
+        // Remove  redundant spaces
         int n = str.length();
-        // i points to next position to be filled in
+        // i   =  next position to be filled
         // output string/ j points to next character
         // in the original string
         int i = 0, j = -1;
@@ -73,12 +72,10 @@ public:
                         str[j] == '?') && i - 1 >= 0 &&
                         str[i - 1] == ' ')
                     str[i - 1] = str[j++];
-
                 else
                     // copy current character at index i
                     // and increment both i and j
                     str[i++] = str[j++];
-
                 // set space flag to false when any
                 // non-space character is found
                 spaceFound = false;

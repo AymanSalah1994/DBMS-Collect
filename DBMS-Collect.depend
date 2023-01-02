@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672329825 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672330335 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -36,7 +36,7 @@
 1671819281 source:c:\users\ayman\desktop\dbms-collect\src\helperstaticclass.cpp
 	"HelperStaticClass.h"
 
-1672329169 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
+1672692839 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
 	<iostream>
 	<vector>
 	<algorithm>
@@ -86,7 +86,7 @@
 1672138291 source:c:\users\ayman\desktop\dbms-collect\src\deleteclass.cpp
 	"DeleteClass.h"
 
-1672329583 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+1672694026 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
 	<iostream>
 	<vector>
 	<sstream>
