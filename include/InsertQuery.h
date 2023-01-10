@@ -73,7 +73,7 @@ public :
 
         if (tableExists() == 0)
         {
-            cout<<"There is NO Table With This Name !"<<endl ;
+            cout<<"There is NO Table With This Name or a Database !"<<endl ;
             return ; // This Will END the Evaluation
         }
 

@@ -85,6 +85,8 @@ public :
                     UCNindex += 2 ;
             }
 
+
+
             string realStringCondionValue ;
             if (hasWhereClause())
             {

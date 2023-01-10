@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1672330335 source:c:\users\ayman\desktop\dbms-collect\main.cpp
+1672697357 source:c:\users\ayman\desktop\dbms-collect\main.cpp
 	<iostream>
 	<conio.h>
 	<HelperStaticClass.h>
@@ -9,6 +9,7 @@
 	<UpdatingQuery.h>
 	<SelectClass.h>
 	<DeleteClass.h>
+	<DropClass.h>
 
 1671868540 c:\users\ayman\desktop\dbms-collect\include\user.h
 	<iostream>
@@ -24,7 +25,7 @@
 1671819382 source:c:\users\ayman\desktop\dbms-collect\src\createquery.cpp
 	"CreateQuery.h"
 
-1672329139 c:\users\ayman\desktop\dbms-collect\include\createquery.h
+1673292055 c:\users\ayman\desktop\dbms-collect\include\createquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -36,7 +37,7 @@
 1671819281 source:c:\users\ayman\desktop\dbms-collect\src\helperstaticclass.cpp
 	"HelperStaticClass.h"
 
-1672692839 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
+1673328622 c:\users\ayman\desktop\dbms-collect\include\helperstaticclass.h
 	<iostream>
 	<vector>
 	<algorithm>
@@ -49,7 +50,7 @@
 1671819864 source:c:\users\ayman\desktop\dbms-collect\src\insertquery.cpp
 	"InsertQuery.h"
 
-1672329212 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
+1673348777 c:\users\ayman\desktop\dbms-collect\include\insertquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -58,7 +59,7 @@
 	<cctype>
 	<HelperStaticClass.h>
 
-1672328072 c:\users\ayman\desktop\dbms-collect\include\updatingquery.h
+1673299755 c:\users\ayman\desktop\dbms-collect\include\updatingquery.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -86,7 +87,7 @@
 1672138291 source:c:\users\ayman\desktop\dbms-collect\src\deleteclass.cpp
 	"DeleteClass.h"
 
-1672694026 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
+1673349019 c:\users\ayman\desktop\dbms-collect\include\deleteclass.h
 	<iostream>
 	<vector>
 	<sstream>
@@ -95,4 +96,31 @@
 	<cctype>
 	<cstdio>
 	<HelperStaticClass.h>
+
+1672695298 source:c:\users\ayman\desktop\dbms-collect\src\dropclass.cpp
+	"DropClass.h"
+
+1672697499 c:\users\ayman\desktop\dbms-collect\include\dropclass.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<string>
+	<HelperStaticClass.h>
+	<GeneralQuery.h>
+
+1672697357 c:\users\ayman\desktop\dbms-collect\include\generalquery.h
+	<iostream>
+	<vector>
+	<sstream>
+	<fstream>
+	<cstdlib>
+	<cctype>
+	<string>
+	<HelperStaticClass.h>
+
+1672695420 source:c:\users\ayman\desktop\dbms-collect\src\generalquery.cpp
+	"GeneralQuery.h"
 

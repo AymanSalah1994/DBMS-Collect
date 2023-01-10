@@ -39,15 +39,6 @@ public :
             return 0  ;
     }
 
-    int dbAlreadExists ()
-    {
-        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && HelperStaticClass::dbExists(databaseName) == 1)
-        {
-            return 1 ;
-        }
-        else
-            return 0 ;
-    }
 
     void evaluateTheCreation()
     {
@@ -59,16 +50,8 @@ public :
             return ; // This Will END the Evaluation
         }
 
-        if (dbAlreadExists() == 1 )
-        {
-            cout<<"Database Already Exists ! " <<endl ;
-            return ; // This Will END the Evaluation
-        }
 
-
-
-
-        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") && dbAlreadExists() != 1)
+        if (HelperStaticClass::queryToUpper(theQueryVector.at(1)) == HelperStaticClass::queryToUpper("database") )
         {
             fstream newFileObject  ;
             newFileObject.open("Databases.txt", ios::app) ;

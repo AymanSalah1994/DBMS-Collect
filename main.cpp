@@ -7,6 +7,7 @@
 #include<UpdatingQuery.h>
 #include<SelectClass.h>
 #include<DeleteClass.h>
+#include<DropClass.h>
 using namespace std;
 
 int main()
@@ -149,6 +150,14 @@ int main()
             {
                 break ;
             }
+
+            else if (HelperStaticClass::queryToUpper(userCommandAsVector.at(0)) == "DROP" )
+            {
+                DropClass DC(userCommandAsString, u.DBName) ;
+                DC.showDrop() ;
+                _getch() ;
+            }
+
 
             else
             {

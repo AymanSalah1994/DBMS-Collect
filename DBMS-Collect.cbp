@@ -36,6 +36,8 @@
 		</Compiler>
 		<Unit filename="include/CreateQuery.h" />
 		<Unit filename="include/DeleteClass.h" />
+		<Unit filename="include/DropClass.h" />
+		<Unit filename="include/GeneralQuery.h" />
 		<Unit filename="include/HelperStaticClass.h" />
 		<Unit filename="include/InsertQuery.h" />
 		<Unit filename="include/SelectClass.h" />
@@ -44,6 +46,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/CreateQuery.cpp" />
 		<Unit filename="src/DeleteClass.cpp" />
+		<Unit filename="src/DropClass.cpp" />
+		<Unit filename="src/GeneralQuery.cpp" />
 		<Unit filename="src/HelperStaticClass.cpp" />
 		<Unit filename="src/InsertQuery.cpp" />
 		<Unit filename="src/SelectClass.cpp" />

@@ -1,0 +1,10 @@
+*-Manual Class 
+DROP 
+SHOW
+    DB
+    Manual 
+    users 
+ALTER 
+
+using colors for the output 
+A report Or Something with PDF files ? 

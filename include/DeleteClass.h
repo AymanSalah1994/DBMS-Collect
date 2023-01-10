@@ -73,8 +73,6 @@ public :
                 string lineOfTable ;
                 getline(checkedFile, lineOfTable);
                 temp << lineOfTable << std::endl;
-                //getline(checkedFile, lineOfTable);
-                //temp << lineOfTable << std::endl;
                 numberOfColumn = HelperStaticClass::vectorFromString(lineOfTable);
                 valuesOfColumns =HelperStaticClass::vectorFromString(lineOfTable);
                 int index;
@@ -84,17 +82,21 @@ public :
                     {
                         // Delete From users where id = 34
                         index = i;
-                        cout<<"Index of I  (the Condition) is :" <<index<<endl ;
+//                        cout<<"Index of I  (the Condition) is :" <<index<<endl ;
                         break;
                     }
                 }
-
+                int flag;
                 while(getline(checkedFile, lineOfTable))
                 {
+                    int flag=0;
                     valuesOfColumns = HelperStaticClass::vectorFromString(lineOfTable);
                     if(valuesOfColumns.at(index) != theQueryVector.at(5)) // This was the BUG
                     {
                         temp << lineOfTable << std::endl;
+                    }
+                    else{
+                        flag=1;
                     }
                 }
 
@@ -104,7 +106,8 @@ public :
 
                 remove(p);
                 rename("temp.txt", p);
-                 cout << "records successfully deleted";
+                if(flag) cout << "record not found";
+                else cout << "records successfully deleted";
 
             }
 
